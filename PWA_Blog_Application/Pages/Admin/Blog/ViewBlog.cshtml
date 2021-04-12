@@ -1,0 +1,34 @@
+﻿@page
+@model PWA_Blog_Application.Pages.Admin.Blog.ViewBlogModel
+@{
+}
+
+<input asp-for="Author.AuthorId" type="hidden" />
+<div>
+    <label asp-for="Author.Author_FirstName">Select The Author</label>
+    <select asp-for="Author.Author_FirstName" asp-items="Model.AutherList" disabled></select>
+    <span asp-validation-for="Author.Author_FirstName"></span>
+</div>
+<div>
+    <label asp-for="Blog.BlogTitle"></label>
+    <input asp-for="Blog.BlogTitle" disabled/>
+    <span asp-validation-for="Blog.BlogTitle"></span>
+</div>
+<div>
+    <label asp-for="Blog.BlogContent"></label>
+    <textarea asp-for="Blog.BlogContent" rows="2" disabled></textarea>
+    <span asp-validation-for="Blog.BlogContent"></span>
+</div>
+<div>
+    <label asp-for="Blog.PublishDate"></label>
+    <input asp-for="Blog.PublishDate" disabled/>
+    <span asp-validation-for="Blog.PublishDate"></span>
+</div>
+
+<div>
+    <label asp-for="Blog.Comment"></label>
+    <input asp-for="Blog.Comment" />
+    <span asp-validation-for="Blog.Comment"></span>
+</div>
+
+<input type="button" value="Cancel" />

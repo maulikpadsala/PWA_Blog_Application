@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PWA_Blog_Application.Models.Blog>
+
+@{ ViewData["Title"] = "Create Blog"; }
+
+<h1 style="color:white;">Top 5 Blogs</h1>
+
+<p>
+    <button type="button" class="btn btn-dark">
+        <a asp-action="Create" style="color:white;">Create New</a>
+    </button>
+</p>
+
+@*              @Html.DisplayNameFor(model => model.blog_content)
+
+    @Html.DisplayNameFor(model => model.auther_name)
+*@
+
+
+@foreach (var item in Model.Take(5))
+{
+<div class="card" style="width: 80vw;">
+    <button class="btn btn-dark"><a asp-action="Details" asp-route-id="@item.BlogId">Details</a></button>
+    <div class="card-body">
+        <h5 class="card-title" style=""> @Html.DisplayFor(modelItem => item.BlogTitle)</h5>
+        <p class="card-text">@Html.DisplayFor(modelItem => item.BlogContent)</p>
+
+    </div>
+
+</div>
+                <br />}
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model List<PWA_Blog_Application.Models.Blog>*@
+<!--@{ ViewData["Title"] = "New Page"; }-->
+@*<div>
+        @for (int i= 0; i < Model.Count; i++)
+        {
+            <div>
+                <label asp-for="@Model[i].AuthorName">The Author</label>
+            </div>
+            <div>
+                <label asp-for="@Model[i]BlogTitle"></label>
+                <input asp-for="@Model[i].BlogTitle" />
+                <span asp-validation-for="@Model[i].BlogTitle"></span>
+            </div>
+            <div>
+                <label asp-for="@Model[i].BlogContent"></label>
+                <textarea asp-for="@Model[i].BlogContent" rows="2"></textarea>
+                <span asp-validation-for="@Model[i].BlogContent"></span>
+            </div>
+            <div>
+                <label asp-for="@Model[i].PublishDate"></label>
+                <input asp-for="@Model[i].PublishDate" />
+                <span asp-validation-for="@Model[i].PublishDate"></span>
+            </div>
+            <input type="button" value="View Blog" onclick="/Admin/Blog/ViewBlog"/>
+        }
+
+    </div>*@
+
+
+
+
+<!--<div asp-validation-summary="All"></div>
+
+@section Scripts
+    {
+    <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}-->
